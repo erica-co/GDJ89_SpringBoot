@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+  <mapper namespace="com.winter.app.board.notice.NoticeDAO">
+  		
+  	<select id="getList" resultType="NoticeVO">
+  		SELECT * FROM user01.NOTICE
+  	</select>
+  	
+  	<select id="getDetail" parameterType="NoticeVO">
+  		SELECT * FROM NOTICE WHERE BOARDNUM=#{boardNum, jdbcType=NUMERIC}
+  	</select>
+  	
+  	<insert id="add"> 
+  		INSERT INTO NOTICE
+  		VALUES (null, 'title3', 'contents3',now(),0,'user03')
+  	</insert>
+  
+  </mapper>
